@@ -1,0 +1,11 @@
+
+
+YangMacs-Mac-mini:calculator yang$ python3 calculator_server.py &
+[1] 2460
+YangMacs-Mac-mini:calculator yang$ python3 -m grpc_tools.protoc -I../../protos --python_out=. --grpc_python_out=. ../../protos/calculator.proto
+YangMacs-Mac-mini:calculator yang$ python3 calculator_client.py &
+[2] 2464
+YangMacs-Mac-mini:calculator yang$ Calculating 3.3 add 5.4. client received: 8.7
+[2]+  Done                    python3 calculator_client.py
+YangMacs-Mac-mini:calculator yang$ 
+
