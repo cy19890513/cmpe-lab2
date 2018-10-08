@@ -25,7 +25,7 @@ def run():
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
     # used in circumstances in which the with statement does not fit the needs
     # of the code.
-    with grpc.insecure_channel('localhost:50051') as channel:
+    with grpc.insecure_channel('[::]:50051') as channel:
         stub = calculator_pb2_grpc.CalculateStub(channel)
         response = stub.CalculateAdd(calculator_pb2.CalculateRequest(input1=3.3,input2=5.4))
         print("Calculating 3.3 add 5.4. client received: " + str(response.result))

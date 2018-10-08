@@ -28,7 +28,7 @@ class Calculator(calculator_pb2_grpc.CalculateServicer):
 
     
     def CalculateAdd(self,request,context):
-        return calculator_pb2.CalculateReply(result=(request.a + request.b))
+        return calculator_pb2.CalculateReply(result=(request.input1 + request.input2))
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
